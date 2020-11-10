@@ -1,0 +1,68 @@
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="conatiner">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label"
+              >Suministro:</label
+            >
+            <input
+              type="text"
+              class="form-control"
+              id="txtSuministroPreview"
+              placeholder="##############"
+            />
+          </div>
+          <canvas width="600" height="600" id="can"></canvas>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  const txtSuministroPre = document.querySelector("#txtSuministroPreview"),
+    txtSuministro = document.querySelector("#txtSuministro");
+  var imgcanvas = document.querySelector("#can");
+  var fileinput = document.querySelector("#customFile");
+  var ctx = imgcanvas.getContext("2d");
+  function upload() {
+    try {
+      var image = new SimpleImage(fileinput);
+      image.drawTo(imgcanvas);
+    } catch (error) {
+      ctx.font = "30px Comic Sans MS";
+      ctx.fillStyle = "red";
+      ctx.textAlign = "center";
+      ctx.fillText(
+        "No se ha cargado ninguna foto.",
+        imgcanvas.width / 2,
+        imgcanvas.height / 2
+      );
+    }
+    txtSuministroPre.value = txtSuministro.value;
+  }
+</script>

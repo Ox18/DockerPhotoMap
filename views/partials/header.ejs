@@ -1,0 +1,61 @@
+<style>
+  .noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+  }
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <img
+        src="/images/logo.png"
+        style="height: 30px;"
+        class="d-inline-block align-top"
+      />
+      CubeS
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="noselect nav-link font-weight-bold disabled"><%= u %></a>
+        </li>
+        <li class="nav-item">
+          <a class="noselect nav-link font-weight-bold disabled">|</a>
+        </li>
+        <% if(admin){ %>
+        <li class="nav-item">
+          <a class="nav-link" href="/support">Soporte Técnico</a>
+        </li>
+        <% } %>
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add">Add Image</a>
+        </li>
+        <li class="nav-item">
+          <a href="/search" class="nav-link">Search</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/salir">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

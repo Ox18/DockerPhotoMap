@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>CubeS | <%= titulo %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../partials/doc') %>
+  </head>
+
+  <body class="grey darken-3">
+    <%- include('../partials/header', { u: usuario, admin: admin }) %>
+    <link
+      rel="stylesheet"
+      href="https://www.chartjs.org/samples/latest/style.css"
+    />
+    <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
+    <script src="https://www.chartjs.org/samples/latest/utils.js"></script>
+    <div class="container p-4">
+      <div class="row">
+        <div class="card mr-5">
+          <div class="card-header">
+            Storage Memory
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><b>Memory Used: </b> <%= memory.convert.rest%></h5>
+            <h5 class="card-title"><b>Memory Total:</b> <%= memory.convert.used%> </h5>
+            <p class="card-text">
+              <canvas id="myChart" height="350vh" width="300vw"></canvas>
+            </p>
+          </div>
+        </div><div class="card mr-5">
+          <div class="card-header">
+            Advanced functions
+          </div>
+          <div class="card-body">
+            <button type="button" id="btnCleanAllSuminister" class="btn btn-danger btn-lg btn-block">Clean All Image</button>
+<button type="button" id="btnCleanAllUsers" class="btn btn-danger btn-lg btn-block">Clean All Users</button>
+            
+          </div>
+        </div><div class="card mr-4">
+          <div class="card-header">
+            Manage Users
+          </div>
+          <div class="card-body">
+            <form>
+  <div class="form-group">
+    <label>Username</label>
+    <input type="text" class="form-control" id="inputNewUsername" placeholder="Enter username">
+  </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input type="text" class="form-control" id="inputNewPassword" placeholder="Enter password">
+  </div>
+  <div class="form-group">
+    <label>Name</label>
+    <input type="text" class="form-control" id="inputNewName" placeholder="Enter name">
+  </div>
+  <div class="form-group">
+    <label>Type</label><br>
+    <select  class="form-control" id="selectType">
+      <option value="0">Normal</option>
+      <option value="1">Support</option>
+    </select>
+  </div>
+  <button type="button" class="btn btn-success btn-lg btn-block" id="btnNewUser">Add User</button>
+</form>
+          </div>
+        </div>
+          <script src="js/support.js"></script>
+          <script src="js/supportDelete.js"></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
